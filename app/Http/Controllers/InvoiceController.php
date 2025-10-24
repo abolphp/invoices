@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -11,10 +12,7 @@ class InvoiceController extends Controller
 
     public function index()
     {
-        $invoices = [
-            ['title' => 'test title', 'description' => 'test', 'quantity' => 2, 'unit_price' => 150],
-            ['title' => 'test title', 'description' => 'test 2', 'quantity' => 3, 'unit_price' => 100],
-        ];
+        $invoices = Repository::$invoices;
         $sumtotals = $this->calculate($invoices);
         $discount = 50;
         $final_total = $sumtotals - $discount;
