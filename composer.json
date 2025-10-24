@@ -10,7 +10,9 @@
         "barryvdh/laravel-dompdf": "^3.1",
         "barryvdh/laravel-snappy": "^1.0",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "nwidart/laravel-modules": "^12.0",
+        "project/finance": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -21,9 +23,17 @@
         "nunomaduro/collision": "^8.6",
         "phpunit/phpunit": "^11.5.3"
     },
+
+    "repositories": [
+        {
+            "type" : "path",
+            "url" : "Modules/Finance"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Modules\\" : "Modules/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
@@ -80,9 +90,10 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

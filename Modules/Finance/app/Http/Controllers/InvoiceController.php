@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Finance\app\Http\Controllers;
 
-use App\Repository;
+use App\Http\Controllers\Controller;
+use Modules\Finance\app\Repository;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,7 @@ class InvoiceController extends Controller
         $discount = 50;
         $final_total = $sumtotals - $discount;
 
-        return view('invoice', compact( 'invoices', 'discount', 'sumtotals', 'final_total'));
+        return view('finance::invoice', compact( 'invoices', 'discount', 'sumtotals', 'final_total'));
     }
 
     public function generate(Request $request)
