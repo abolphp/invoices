@@ -250,11 +250,11 @@
 
                         @if(session('pdf_path'))
                             <p style="margin-top:20px;">
-                                    <a style="background: rgba(115, 102, 255, 0.1);color: rgba(115, 102, 255, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none; display: inline-block; margin-left: 7px;"
-                                       href="{{ route('invoice.download' , ['file' => session('pdf_path') ] ) }}">
-                                        Download<i class="icon-arrow-right"
-                                                   style="font-size:13px;font-weight:bold; margin-left: 10px;"></i>
-                                    </a>
+                                <a style="background: rgba(115, 102, 255, 0.1);color: rgba(115, 102, 255, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none; display: inline-block; margin-left: 7px;"
+                                   href="{{ route('invoice.download' , ['file' => session('pdf_path') ] ) }}">
+                                    Download<i class="icon-arrow-right"
+                                               style="font-size:13px;font-weight:bold; margin-left: 10px;"></i>
+                                </a>
                         @endif
 
 

@@ -18,7 +18,7 @@ class InvoiceController extends Controller
         $discount = 50;
         $final_total = $sumtotals - $discount;
 
-        return view('finance::invoice', compact( 'invoices', 'discount', 'sumtotals', 'final_total'));
+        return view('Finance::invoice', compact( 'invoices', 'discount', 'sumtotals', 'final_total'));
     }
 
     public function generate(Request $request)
@@ -29,7 +29,7 @@ class InvoiceController extends Controller
         $discount = 50;
         $final_total = $sumtotals - $discount;
 
-        $pdf = Pdf::loadView('invoice', compact('invoices' , 'discount', 'sumtotals', 'final_total' ))
+        $pdf = Pdf::loadView('Finance::invoice', compact('invoices' , 'discount', 'sumtotals', 'final_total' ))
             ->setPaper('a4')
             ->setOptions([
                 'dpi' => 150,
@@ -37,11 +37,12 @@ class InvoiceController extends Controller
                 'isRemoteEnabled' => true,
             ]);
 
+
         $fileName = 'invoice_' . now()->timestamp . '.pdf';
         $path = 'invoices/' . $fileName;
 
         Storage::disk('public')->put($path, $pdf->output());
-        return back()->with('pdf_path', $fileName );
+        return redirect()->route('invoice')->with('pdf_path', $fileName);
     }
 
 

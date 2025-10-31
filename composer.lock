@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87cf9e7caf9233b7cd5a6a7152089e3d",
+    "content-hash": "63dd901f6968e18270cbcafbfa4fa913",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -818,6 +818,32 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "finance/invoice",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "Modules/Finance",
+                "reference": "e75d475a4ea56b8cd4c1802584f0774eeb6ebd39"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\Modules\\Finance\\app\\Providers\\FinanceServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\Finance\\": ""
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "fruitcake/php-cors",
@@ -3120,37 +3146,6 @@
                 }
             ],
             "time": "2025-08-21T11:53:16+00:00"
-        },
-        {
-            "name": "project/finance",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "Modules/Finance",
-                "reference": "88574d6ab8ab5e1357838a4053f0c26616e2ac83"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "\\Modules\\Finance\\app\\Providers\\FinanceServiceProvider"
-                    ],
-                    "aliases": []
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Modules\\Finance\\": "/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Modules\\Finance\\Tests\\": "tests/"
-                }
-            },
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "psr/clock",
@@ -9079,7 +9074,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "project/finance": 20
+        "finance/invoice": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
